@@ -7,17 +7,18 @@ import Reset from '../components/Reset/Reset';
 import Visors from '../components/Visor/Visors';
 import Logo from '../components/Logo/Logo';
 import Container from '../styles/Container';
-// import { useSound } from '../context/soundContext';
+import { useSound } from '../context/soundContext';
 import { useQuiz } from '../hooks/SystemGame';
 
 
 const Main = () => {
 
-  // const { play, isMuted, toggleMute } = useSound();
-  const { alternatives, verifyOption, gameScore, remaindingMoves, reset } = useQuiz();
+  const { play, isMuted, toggleMute } = useSound();
+  const { alternatives, verifyOption, gameScore, remaindingMoves, reset } = useQuiz();  
 
-  
-
+  useEffect(() => {
+    play("SoundTrack")
+  }, [])
   return (
 
     <Container >

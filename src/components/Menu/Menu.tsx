@@ -19,7 +19,7 @@ const Menu = ({ visible, onClose } : IMenu) => {
             <Container >
                 <Model>
                     <ButtonMenu
-                        icon={isMuted ? SpeakerHighIcon : SpeakerSimpleSlashIcon}
+                        icon={isMuted ? SpeakerSimpleSlashIcon : SpeakerHighIcon}
                         color="gray"
                         size={35}
                         onPress={toggleMute}

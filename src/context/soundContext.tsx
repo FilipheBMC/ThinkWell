@@ -53,7 +53,7 @@ interface ISoundContext {
 const SoundContext = createContext<ISoundContext | null>(null);
 
 export function SoundProvider({ children }: { children: React.ReactNode }) {
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
   const [bgSound, setBgSound] = useState<Audio.Sound | null>(null);
 
   // ✅ Toca som de fundo automaticamente quando o Provider monta
