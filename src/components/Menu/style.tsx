@@ -1,6 +1,6 @@
 import { IconProps } from "phosphor-react-native";
 import { Component, ReactNode } from "react";
-import { Pressable, StyleSheet, Touchable, TouchableOpacity, View } from "react-native";
+import { Pressable, StyleSheet, Text, Touchable, TouchableOpacity, View } from "react-native";
 
 interface ContainerProps {
     children: ReactNode;
@@ -13,6 +13,11 @@ interface ButtonIconProps {
     onPress?: () => void;
 }
 
+interface ButtonTextProps {
+    color : string;
+    onPress: (code:string) => void;
+    title: string
+}
 
 const styles = StyleSheet.create({
     container: {
@@ -67,4 +72,12 @@ export const Leave = ({icon : Icon, color, onPress, size} : ButtonIconProps) => 
     <TouchableOpacity style={styles.buttonn} onPress={onPress}>
         <Icon size={size} color={color} />
     </TouchableOpacity>)
+}
+
+export const ButtonText = ({color, onPress, title} : ButtonTextProps) => {
+    return (
+        <TouchableOpacity style={styles.buttonn} onPress={() => onPress(title)}>
+            <Text>{title}</Text>
+        </TouchableOpacity>
+    )
 }

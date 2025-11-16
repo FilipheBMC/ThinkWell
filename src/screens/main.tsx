@@ -14,7 +14,7 @@ import { useQuiz } from '../hooks/SystemGame';
 const Main = () => {
 
   const { play, isMuted, toggleMute } = useSound();
-  const { alternatives, verifyOption, gameScore, remaindingMoves, reset } = useQuiz();  
+  const { alternatives, verifyOption, gameScore, remaindingMoves, reset, start, setCode } = useQuiz();  
 
   useEffect(() => {
     play("SoundTrack")
@@ -36,7 +36,16 @@ const Main = () => {
       />
 
       {/* Reset */}
-      <Reset onPress={reset} />
+      {/* <Reset onPress={(code) => {code ? setCode(code) : reset}} state={start}/> */}
+      <Reset onPress={(code) => {
+    if (code) {
+        setCode(code);
+    } else {
+        reset(); // ← AGORA SIM executa
+    }
+}} state={start}/>
+
+      
 
     </Container>
   )

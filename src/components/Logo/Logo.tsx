@@ -2,6 +2,7 @@ import { Image, Pressable, View } from 'react-native'
 import React, { useRef, useState } from 'react'
 import logoTec from '../../assets/image/logoTec.png';
 import Menu from '../Menu/Menu';
+import MenuPrograms from '../Menu/MenuPrograms';
 
 const Logo = () => {
 
